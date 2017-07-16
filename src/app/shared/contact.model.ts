@@ -1,4 +1,4 @@
-export class Contact {
+export default class Contact {
   id: number;
   name: string;
   company: string;

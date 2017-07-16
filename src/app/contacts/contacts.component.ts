@@ -1,7 +1,7 @@
-import { Contact } from '../shared/';
+import { Contact, ContactService } from '../shared/';
 import { Component, OnInit } from '@angular/core';
 
-import * as Data from './../../../db/mock-data.json';
+
 
 @Component({
   selector: 'app-contacts',
@@ -11,18 +11,12 @@ import * as Data from './../../../db/mock-data.json';
 export class ContactsComponent implements OnInit {
   contacts: Contact[] = [];
 
-  constructor() {
+  constructor(private contactService: ContactService) {
     console.log(this.constructor.name);
-
   }
 
   ngOnInit() {
-    Data.forEach((entry, index) => {
-      let newContact: Contact = {id: index, ...entry };
-      this.contacts.push(newContact);
-    })
-
-    console.log(this.contacts);
+    this.contacts = this.contactService.getContacts();
   }
 
 }

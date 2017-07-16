@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +9,8 @@ import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/';
 import { ContactsListComponent } from './contacts/contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
+
+import { ContactService } from './shared/';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,7 @@ import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-det
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

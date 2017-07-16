@@ -1,4 +1,8 @@
+import { Contact } from '../../shared/';
+
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ContactService } from './../../shared/';
 
 @Component({
   selector: 'app-contacts-detail',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsDetailComponent implements OnInit {
 
-  constructor() { }
+  contact: Contact;
+
+  constructor(private route: ActivatedRoute, private contactService: ContactService) {
+    console.log(this.constructor.name);
+
+    route.params.subscribe(params => this.loadContact());
+  }
 
   ngOnInit() {
+    this.loadContact();
+  }
+  loadContact() {
+    this.contact = this.contactService.getContact(parseInt(this.route.snapshot.params['id']));
+
+    console.log(this.contact);
   }
 
 }

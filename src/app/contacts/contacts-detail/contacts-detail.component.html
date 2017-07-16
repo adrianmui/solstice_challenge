@@ -1,3 +1,14 @@
-<p>
-  contacts-detail works!
-</p>
+<img src={{contact.largeImageURL}}>
+{{ contact.name }}
+{{ contact.company }}
+<div [ngSwitch]="phone_pref">
+  <div ng-switch-when="work">{{contact.phone.work}}</div>
+  <div ng-switch-when="home">{{contact.phone.home}}</div>
+  <div ng-switch-when="mobile">{{contact.phone.mobile}}</div>
+  <div ng-switch-default>{{contact.phone.mobile}}</div>
+</div>
+
+
+{{ contact.address.street }}, {{ contact.address.state }}, {{ contact.address.country }}, {{ contact.address.zip }}
+{{ contact.birthday }}
+{{ contact.email }}
