@@ -1,3 +1,6 @@
-<p>
-  contacts-list works!
-</p>
+<div class="contact-list" (click)="selectContact(contact)" >
+  <img src={{contact.smallImageURL}}>
+  <h3>{{contact.name}}</h3>
+  <small>{{contact.phone.work}}</small>
+</div>
+

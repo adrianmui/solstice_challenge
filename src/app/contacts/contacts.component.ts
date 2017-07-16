@@ -9,7 +9,7 @@ import * as Data from './../../../db/mock-data.json';
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-  contacts: Contact[] = Data;
+  contacts: Contact[] = [];
 
   constructor() {
     console.log(this.constructor.name);
@@ -17,6 +17,12 @@ export class ContactsComponent implements OnInit {
   }
 
   ngOnInit() {
+    Data.forEach((entry, index) => {
+      let newContact: Contact = {id: index, ...entry };
+      this.contacts.push(newContact);
+    })
+
+    console.log(this.contacts);
   }
 
 }

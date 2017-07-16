@@ -1,3 +1,4 @@
+import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +10,13 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: ContactsComponent
+        component: ContactsComponent,
+        children: [
+          {
+            path: ':id',
+            component: ContactsDetailComponent
+          }
+        ]
       }]
   },
   { path: '**', redirectTo: '' }
