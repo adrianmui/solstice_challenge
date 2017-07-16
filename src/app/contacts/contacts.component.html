@@ -1,0 +1,8 @@
+<div class="contacts-group">
+  <<router-outlet></router-outlet>
+  <div *ngFor="let contact of contacts">
+    {{ contact.name }}
+    {{ contact.email }}
+    <img src={{contact.smallImageURL}}>
+  </div>
+</div>
