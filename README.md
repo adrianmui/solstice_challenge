@@ -19,6 +19,7 @@
     contacts-detail
       renders a full description of the selected contact.
       click between phone #s to see mobile, home, cell.
+      click the star to favorite/unfavorite the contact.
   1 service
     contact service
       really there to take in the data and add id #s.
