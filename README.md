@@ -22,6 +22,7 @@
   1 service
     contact service
       really there to take in the data and add id #s.
+      added observables to subscribe to changes in the contacts array. it sends the new data to ContactsComponent which flows/updates the data down to its child components.
   1 typings
     contact model
       defining my contacts because i don't need the rest of the properties in each data entry
