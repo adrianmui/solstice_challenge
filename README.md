@@ -1,28 +1,30 @@
-# SolsticeChallenge
+# SolsticeChallenge - Front End with Angular 2 TS/ES6 and sass
+
+``` running it:
+  npm install
+  ng build
+  ng server
+```
+
+```stuff:
+  localhost:4200/contacts/
+  localhost:4200/contacts/:id
+  3 components
+    contacts
+      caches the json data
+    contacts-list
+      displays on the LHS in blocks, able to scroll and add future lazy loading capabilities
+    contacts-detail
+      renders a full description of the selected contact.
+      click between phone #s to see mobile, home, cell.
+  1 service
+    contact service
+      really there to take in the data and add id #s.
+  1 typings
+    contact model
+      defining my contacts because i don't need the rest of the properties in each data entry
+  sass  
+    i decided to make app.component.scss my global sass because i disagreed with how angular-cli has its own weird stylesheet inheritance-blocker.
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

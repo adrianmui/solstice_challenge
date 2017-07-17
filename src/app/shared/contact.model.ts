@@ -17,4 +17,5 @@ export default class Contact {
   smallImageURL: string;
   largeImageURL: string;
   email: string;
+  birthdate: string;
 }

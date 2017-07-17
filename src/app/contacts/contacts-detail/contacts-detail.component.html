@@ -1,15 +1,69 @@
-<img src={{contact.largeImageURL}}>
-{{ contact.name }}
-{{ contact.company }}
-<div [ngSwitch]="phone_pref">
-  <div *ngSwitchCase="work">{{contact.phone.work}}</div>
-  <div *ngSwitchCase="home">{{contact.phone.home}}</div>
-  <div *ngSwitchCase="mobile">{{contact.phone.mobile}}</div>
-  <div *ngSwitchDefault>{{contact.phone.mobile}}</div>
+<div class="contacts-detail">
+  <div class="contacts-head">
+    <div class="img-container">
+    <img src={{contact.largeImageURL}}>
+    </div>
+    <div class="body-container">
+      <div class="contacts-block">
+        <div class="contacts-block-body">
+          {{ contact.name }}
+        </div>
+      </div>
+      <div class="contacts-block">
+        <div class="contacts-block-header">
+          <p>Company: </p>
+        </div>
+        <div class="contacts-block-body">
+          {{ contact.company }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contacts-block">
+    <div class="contacts-block-header">
+      <span>
+        <p>Phone: <button (click)="changePhone()">
+          {{phone_types[phone_pref] }}
+        </button></p>
+      </span>
+    </div>
+    <div class="contacts-block-body">
+      <div [ngSwitch]="phone_pref">
+        <div *ngSwitchCase="2">{{contact.phone.work}}</div>
+        <div *ngSwitchCase="1">{{contact.phone.home}}</div>
+        <div *ngSwitchCase="0">{{contact.phone.mobile}}</div>
+        <div *ngSwitchDefault>{{contact.phone.mobile}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contacts-block">
+    <div class="contacts-block-header">
+      <p>Address: </p>
+    </div>
+    <div class="contacts-block-body">
+      {{ contact.address.street }} <br>
+      {{ contact.address.state }}, {{ contact.address.country }}, {{ contact.address.zip }}
+    </div>
+  </div>
+
+  <div class="contacts-block">
+    <div class="contacts-block-header">
+      <p>Birthday: </p>
+    </div>
+    <div class="contacts-block-body">
+      {{ contact.birthdate }}
+    </div>
+  </div>
+
+  <div class="contacts-block">
+    <div class="contacts-block-header">
+      <p>Email: </p>
+    </div>
+    <div class="contacts-block-body">
+      {{ contact.email }}
+    </div>
+  </div>
+
 </div>
-
-
-{{ contact.address.street }}, {{ contact.address.state }}, {{ contact.address.country }}, {{ contact.address.zip }}
-{{ contact.birthday }}
-
-{{ contact.email }}

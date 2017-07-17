@@ -1,0 +1,83 @@
+$facebook-blue: rgb(59, 89, 152);
+$facebook-lblue: #8b9dc3;
+$material-grey: #BDBDBD;
+$material-white: #f3f3f3;
+
+@mixin profile_picture_description($img-dir, $img-ratio, $desc-ratio) {
+  .img-container {
+    flex: $img-ratio;
+    display: flex;
+    justify-content: $img-dir;
+    align-items: center;
+  }
+
+  .body-container {
+    flex: $desc-ratio;
+    margin: 0px 20px;
+    display: block;
+    color: $material-white;
+  }
+}
+
+body {
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.contacts {
+  border: 1px solid grey;
+
+  &-group {
+    display: flex;
+
+    @for $i from 1 through 10 {
+      .w-#{$i} {
+        flex: #{$i};
+        height: 100vh;
+        overflow: scroll;
+      }
+    }
+  }
+
+  &-list {
+    background-color: $facebook-blue;
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid $material-white;
+
+    @include profile_picture_description(center, 1, 2);
+
+    &:hover {
+      background-color: darken($facebook-blue, 10%);
+
+    }
+  }
+
+  &-detail {
+    padding: 20px 20px 0px 20px;
+    background-color: $facebook-lblue;
+    height: 100vh;
+
+    .contacts-head {
+      display: flex;
+
+      @include profile_picture_description(left, 1, 4);
+    }
+  }
+
+  &-block {
+    margin-bottom: 30px;
+    color: $material-white;
+    &-header{
+      >p {
+        margin: 0px;
+        font-weight: light;
+      }
+    }
+    &-body {
+      font-weight: bold;
+    }
+  }
+}
+
+

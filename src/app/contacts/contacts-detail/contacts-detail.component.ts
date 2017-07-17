@@ -13,7 +13,8 @@ export class ContactsDetailComponent implements OnInit {
 
   contact: Contact;
 
-  phone_pref: string = "mobile";
+  phone_types = ["mobile", "work", "home"];
+  phone_pref: number = 0;
 
   constructor(private route: ActivatedRoute, private contactService: ContactService) {
     console.log(this.constructor.name);
@@ -24,8 +25,14 @@ export class ContactsDetailComponent implements OnInit {
   ngOnInit() {
     this.loadContact();
   }
+
+  changePhone() {
+    this.phone_pref = (this.phone_pref >= 2) ? 0 : this.phone_pref + 1;
+  }
+
   loadContact() {
     this.contact = this.contactService.getContact(parseInt(this.route.snapshot.params['id']));
+    this.phone_pref = 0;
   }
 
 }
