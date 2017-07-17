@@ -3,8 +3,18 @@
     <img src={{contact.smallImageURL}}>
   </div>
   <div class="body-container">
-    <p>{{contact.name}}</p>
+    <p>
+      {{contact.name}}
+      <span *ngIf="contact.favorite;else other_content">
+        <i class="material-icons">star</i>
+      </span>
+
+      <ng-template #other_content>
+        <i class="material-icons">star_border</i>
+      </ng-template>
+    </p>
     <small>{{contact.phone.work}}</small>
+
   </div>
 
 </a>

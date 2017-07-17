@@ -10,13 +10,13 @@ import { ContactService } from './../../shared/';
   styleUrls: ['./contacts-detail.component.scss']
 })
 export class ContactsDetailComponent implements OnInit {
-
   contact: Contact;
 
-  phone_types = ["mobile", "work", "home"];
-  phone_pref: number = 0;
+  phone_types = ['mobile', 'work', 'home'];
+  phone_pref = 0;
 
-  constructor(private route: ActivatedRoute, private contactService: ContactService) {
+  constructor(private route: ActivatedRoute,
+              private contactService: ContactService) {
     console.log(this.constructor.name);
 
     route.params.subscribe(params => this.loadContact());
@@ -24,14 +24,21 @@ export class ContactsDetailComponent implements OnInit {
 
   ngOnInit() {
     this.loadContact();
+
   }
 
   changePhone() {
     this.phone_pref = (this.phone_pref >= 2) ? 0 : this.phone_pref + 1;
   }
 
+  assignFavorite() {
+    console.log('made favorite!');
+    this.contactService.makeFavorite(this.contact.id);
+  }
+
   loadContact() {
-    this.contact = this.contactService.getContact(parseInt(this.route.snapshot.params['id']));
+    this.contact = this.contactService.getContact(this.route.snapshot.params['id']);
+    console.log(this.contact);
     this.phone_pref = 0;
   }
 

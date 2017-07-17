@@ -7,6 +7,15 @@
       <div class="contacts-block">
         <div class="contacts-block-body">
           {{ contact.name }}
+           <a (click)="assignFavorite()">
+              <span *ngIf="contact.favorite;else other_content">
+                    <i class="material-icons">star</i>
+              </span>
+
+              <ng-template #other_content>
+                <i class="material-icons">star_border</i>
+              </ng-template>
+          </a>
         </div>
       </div>
       <div class="contacts-block">

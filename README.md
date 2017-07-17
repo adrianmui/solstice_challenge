@@ -1,4 +1,6 @@
-# SolsticeChallenge - Front End with Angular 2 TS/ES6 and sass
+## Adrian Mui
+
+### SolsticeChallenge - Front End with Angular 2 TS/ES6 and sass
 
 ``` running it:
   npm install
@@ -25,6 +27,10 @@
       defining my contacts because i don't need the rest of the properties in each data entry
   sass  
     i decided to make app.component.scss my global sass because i disagreed with how angular-cli has its own weird stylesheet inheritance-blocker.
+```
+
+```external:
+  material design icons
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
