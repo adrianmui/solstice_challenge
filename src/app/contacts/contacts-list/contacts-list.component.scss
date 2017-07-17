@@ -1,0 +1,21 @@
+.contacts-list {
+  background-color: rgb(59, 89, 152);
+  height: 100px;
+  display: flex;
+  border-bottom: 1px solid #BDBDBD;
+
+  .img-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+  }
+
+  .body-container {
+    flex: 2;
+    display: block;
+    color: #f3f3f3;
+
+  }
+
+}

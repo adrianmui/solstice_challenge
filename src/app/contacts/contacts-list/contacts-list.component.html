@@ -1,6 +1,11 @@
-<div class="contact-list" (click)="selectContact(contact)" >
-  <img src={{contact.smallImageURL}}>
-  <h3>{{contact.name}}</h3>
-  <small>{{contact.phone.work}}</small>
+<div class="contacts-list" (click)="selectContact(contact)" >
+  <div class="img-container">
+    <img src={{contact.smallImageURL}}>
+  </div>
+  <div class="body-container">
+    <p>{{contact.name}}</p>
+    <small>{{contact.phone.work}}</small>
+  </div>
+
 </div>
 

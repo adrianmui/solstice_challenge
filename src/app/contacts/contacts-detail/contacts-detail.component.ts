@@ -13,6 +13,8 @@ export class ContactsDetailComponent implements OnInit {
 
   contact: Contact;
 
+  phone_pref: string = "mobile";
+
   constructor(private route: ActivatedRoute, private contactService: ContactService) {
     console.log(this.constructor.name);
 
@@ -24,8 +26,6 @@ export class ContactsDetailComponent implements OnInit {
   }
   loadContact() {
     this.contact = this.contactService.getContact(parseInt(this.route.snapshot.params['id']));
-
-    console.log(this.contact);
   }
 
 }

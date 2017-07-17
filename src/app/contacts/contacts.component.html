@@ -1,9 +1,11 @@
-<div class="contacts-group">
-  <div class="w-3">
-    <app-contacts-list *ngFor="let contact of contacts" [contact]="contact"></app-contacts-list>
-  </div>
+<div class="contacts">
+  <div class="contacts-group">
+    <div class="w-3">
+      <app-contacts-list *ngFor="let contact of contacts" [contact]="contact"></app-contacts-list>
+    </div>
 
-  <div class="w-7">
-    <router-outlet></router-outlet>
+    <div class="w-7">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

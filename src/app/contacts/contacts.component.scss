@@ -1,15 +1,25 @@
-.contacts-group {
-  display: flex;
-  width: 100%;
+body {
+  height: 100vh;
 }
-
-.w {
-  margin: 0px;
-  &-3 {
-    flex: 3;
+.contacts {
+  border: 1px solid grey;
+  &-group {
+    display: flex;
+    width: 100%;
   }
 
-  &-7 {
-    flex: 7;
+  .w {
+    margin: 0px;
+    &-3 {
+      flex: 3;
+      height: 100vh;
+      overflow: scroll;
+    }
+
+    &-7 {
+      flex: 7;
+    }
   }
 }
+
+

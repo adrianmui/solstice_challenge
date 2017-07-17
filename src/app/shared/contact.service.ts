@@ -16,15 +16,8 @@ export class ContactService {
     })
   }
 
-  getContacts(): Contact[] {
-    return this.contacts;
-  }
+  /** constructor needs `this` and doesn't let me use stateless functions*/
+  getContacts = (): Contact[] => (this.contacts);
 
-  getContact(id: number): Contact {
-    console.log(`get contact ${typeof id}`)
-    return _.find(this.contacts, el =>  {
-      return el.id === id;
-    }
-    );
-  }
+  getContact = (id: Number): Contact => ( _.find(this.contacts, el => el.id === id));
 }
